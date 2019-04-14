@@ -31,7 +31,7 @@ namespace QIQI.EplOnCpp.GUI
                 default:
                     throw new Exception("请选择正确的项目类型");
             }
-            if (source.ESystemInfo.ProjectType != 3)
+            if (source.ESystemInfo.FileType != 3)
             {
                 throw new Exception("源文件应为ECom(*.ec)文件");
             }
