@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace QIQI.EplOnCppUI.GUI
+namespace QIQI.EplOnCpp.GUI
 {
     public partial class LicenseForm : Form
     {

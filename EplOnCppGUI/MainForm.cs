@@ -1,5 +1,4 @@
 ﻿using QIQI.EplOnCpp.Core;
-using QIQI.EplOnCppUI.GUI;
 using System;
 using System.IO;
 using System.Windows.Forms;

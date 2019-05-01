@@ -113,7 +113,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QIQI.EplOnCppUI.GUI.Properties.Resources.donate;
+            this.pictureBox1.Image = global::QIQI.EplOnCpp.GUI.Properties.Resources.donate;
             this.pictureBox1.Location = new System.Drawing.Point(387, 17);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
