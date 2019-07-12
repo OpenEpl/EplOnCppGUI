@@ -1,6 +1,7 @@
 ﻿using QIQI.EplOnCpp.Core;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace QIQI.EplOnCpp.GUI
@@ -53,6 +54,9 @@ namespace QIQI.EplOnCpp.GUI
         private void MainForm_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
+            var coreVersionInfo = Attribute.GetCustomAttribute(typeof(ProjectConverter).Assembly, typeof(AssemblyInformationalVersionAttribute))
+                as AssemblyInformationalVersionAttribute;
+            this.Text = string.Format("EplOnCpp.GUI (Core: v{0})", coreVersionInfo?.InformationalVersion ?? "Unknown");
         }
 
         private void Button1_Click(object sender, EventArgs e)
