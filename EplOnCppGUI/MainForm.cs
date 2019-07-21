@@ -19,6 +19,11 @@ namespace QIQI.EplOnCpp.GUI
             var logger = new StreamLoggerWithContext(logWriter, logWriter, false);
             try
             {
+                if (!EocEnv.IsValid)
+                {
+                    logger.Error("环境变量EOC_HOME未正确配置");
+                    return;
+                }
                 var srcFile = textBox1.Text;
                 var destFile = textBox2.Text;
                 var source = new EProjectFile.EProjectFile();
@@ -42,13 +47,16 @@ namespace QIQI.EplOnCpp.GUI
                     throw new Exception("源文件应为ECom(*.ec)文件");
                 }
                 new ProjectConverter(source, projectType, null, logger).Generate(destFile);
+                logger.Info("操作完成");
             }
             catch (Exception exception)
             {
                 logger.Error("处理程序不正常退出，异常信息：{0}", exception);
             }
-            logger.Info("操作完成");
-            MessageBox.Show(logWriter.ToString(), "Log");
+            finally
+            {
+                MessageBox.Show(logWriter.ToString(), "Log");
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
