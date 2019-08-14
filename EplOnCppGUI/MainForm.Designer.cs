@@ -105,7 +105,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Windows窗口程序",
-            "Windows控制台程序"});
+            "Windows控制台程序",
+            "Windows动态链接库"});
             this.comboBox1.Location = new System.Drawing.Point(93, 101);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";

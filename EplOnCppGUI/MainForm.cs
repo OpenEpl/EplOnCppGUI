@@ -39,6 +39,10 @@ namespace QIQI.EplOnCpp.GUI
                         projectType = ProjectConverter.EocProjectType.Console;
                         break;
 
+                    case 2:
+                        projectType = ProjectConverter.EocProjectType.Dll;
+                        break;
+
                     default:
                         throw new Exception("请选择正确的项目类型");
                 }
