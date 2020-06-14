@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QIQI.EplOnCpp.GUI.Properties {
+namespace QIQI.EplOnCppGUI.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace QIQI.EplOnCpp.GUI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QIQI.EplOnCpp.GUI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QIQI.EplOnCppGUI.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,12 +61,47 @@ namespace QIQI.EplOnCpp.GUI.Properties {
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap donate {
+        internal static byte[] Donate {
             get {
-                object obj = ResourceManager.GetObject("donate", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Donate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MIT License
+        ///
+        ///Copyright (C) 2019 QIQI&lt;Email: 1354092549@qq.com&gt;
+        ///
+        ///Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        ///
+        ///The abov [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string License {
+            get {
+                return ResourceManager.GetString("License", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 欢迎使用本软件
+        ///本软件由易语言爱好者自发制作，由于易语言不支持x64而开发此软件
+        ///本软件为开源作品，接受社区贡献，欢迎大家参与贡献
+        ///
+        ///本软件为非官方作品，作者不对使用本软件造成的任何损失承担任何责任，亦不保证本软件的可用性
+        ///继续使用代表您接受这一点，请周知
+        ///
+        ///由于成本超出预期，且本人日前学业繁重，故本项目目前属于搁置阶段
+        ///由于能力有限，且本产品实际属于理论验证型产品（利用*.ec文件的AST完成转换，未做词法语法分析），代码极差，大神勿喷
+        ///
+        ///欢迎技术交流
+        ///QQ群：605310933 的本地化字符串。
+        /// </summary>
+        internal static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
             }
         }
     }
