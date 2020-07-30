@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -82,15 +83,23 @@ namespace QIQI.EplOnCppGUI
             });
         }
 
-        private async void RescanCMakeKits_Click(object sender, RoutedEventArgs e)
+        private void RescanCMakeKits_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                new Thread(() =>
+                {
+                    MessageBox.Show("扫描过程可能出现无响应，请耐心等待1-2分钟的时间");
+                }).Start();
                 RescanCMakeKits.IsEnabled = false;
-                VsInstances.GetAll(); //Init on main thread
-                await CMakeKitsController.ScanKitsAsync();
+                DispatcherHelper.DoEvents();
+                CMakeKitsController.ScanKits();
                 ViewModel.CMakeKits = CMakeKitsController.GetKits();
                 ViewModel.CMakeKit = ViewModel.CMakeKits.FirstOrDefault();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(this, $"扫描出错：{exception}", "扫描出错", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
