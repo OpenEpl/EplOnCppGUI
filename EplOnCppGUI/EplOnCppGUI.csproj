@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>QIQI.EplOnCppGUI</RootNamespace>
     <AssemblyName>QIQI.EplOnCppGUI</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
