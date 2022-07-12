@@ -2,6 +2,8 @@
 using QIQI.CMakeCaller;
 using QIQI.CMakeCaller.Kits;
 using QIQI.EplOnCpp.Core;
+using QIQI.EProjectFile;
+using QIQI.EProjectFile.Sections;
 using QIQI.WpfStepwiseLog;
 using System;
 using System.Collections.Generic;
@@ -161,9 +163,12 @@ namespace QIQI.EplOnCppGUI
                     eocLogger.Error("环境变量EOC_HOME未正确配置");
                     step.State = StepState.Failed;
                 }
-                var source = new EProjectFile.EProjectFile();
-                source.Load(File.OpenRead(ViewModel.SourcePath));
-                if (source.ESystemInfo.FileType != 3 && !ViewModel.Force)
+                var source = new EplDocument();
+                using (var file = File.OpenRead(ViewModel.SourcePath))
+                {
+                    source.Load(file);
+                }
+                if (source.GetOrNull(ESystemInfoSection.Key)?.FileType != 3 && !ViewModel.Force)
                 {
                     eocLogger.Error("源文件应为ECom(*.ec)文件");
                     step.State = StepState.Failed;
